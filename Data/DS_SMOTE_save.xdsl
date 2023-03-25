@@ -1,0 +1,250 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- This network was created in GeNIe Academic, which can be used for academic teaching and research purposes only -->
+<smile version="1.0" id="Sub0" numsamples="1000" discsamples="10000">
+	<nodes>
+		<cpt id="N2" diagtype="observation">
+			<state id="S_0_72" label="N2_0_72" />
+			<state id="S_73_inf" label="N2_73_inf" />
+			<probabilities>0.4382 0.5618</probabilities>
+		</cpt>
+		<cpt id="N3" diagtype="observation">
+			<state id="S_female" label="N3_female" />
+			<state id="S_male" label="N3_male" />
+			<probabilities>0.8244 0.1756</probabilities>
+		</cpt>
+		<cpt id="N4" diagtype="observation">
+			<state id="S_0_13" label="N4_0_13" />
+			<state id="S_14_inf" label="N4_14_inf" />
+			<probabilities>0.9437 0.0563</probabilities>
+		</cpt>
+		<cpt id="N6" diagtype="observation">
+			<state id="S_negative" label="N6_negative" />
+			<state id="S_positive" label="N6_positive" />
+			<parents>N2 N3 N4</parents>
+			<probabilities>0.607 0.393 1 0 0.3566 0.6434 1 0 0.329 0.671 0.2462 0.7538 0.1077 0.8923 0 1</probabilities>
+		</cpt>
+		<cpt id="N14" diagtype="observation">
+			<state id="S_0_17" label="N14_0_17" />
+			<state id="S_18_26" label="N14_18_26" />
+			<state id="S_27_30" label="N14_27_30" />
+			<parents>N6</parents>
+			<probabilities>0.1213 0.4242 0.4545 0.5793 0.4048 0.0159</probabilities>
+		</cpt>
+		<cpt id="N8" diagtype="observation">
+			<state id="S_0_normal_control" label="N8_0_normal_control" />
+			<state id="S_0_5_very_mild" label="N8_0_5_very_mild" />
+			<state id="S_1_mild" label="N8_1_mild" />
+			<state id="S_2_moderate" label="N8_2_moderate" />
+			<state id="S_3_severe" label="N8_3_severe" />
+			<parents>N6</parents>
+			<probabilities>0.1342 0.6829 0.1585 0.0122 0.0122 0 0.0152 0.4275 0.2443 0.313</probabilities>
+		</cpt>
+		<cpt id="N15" diagtype="observation">
+			<state id="S_0_4" label="N15_0_4" />
+			<state id="S_5_11" label="N15_5_11" />
+			<state id="S_12_inf" label="N15_12_inf" />
+			<parents>N6</parents>
+			<probabilities>0 0.2842 0.7158 0.2764 0.5854 0.1382</probabilities>
+		</cpt>
+		<cpt id="N11" diagtype="observation">
+			<state id="S_0" label="N11_0" />
+			<state id="S_1_2" label="N11_1_2" />
+			<state id="S_3_inf" label="N11_3_inf" />
+			<parents>N6</parents>
+			<probabilities>0.3378 0.1487 0.5135 0 0.0313 0.9687</probabilities>
+		</cpt>
+		<cpt id="N16" diagtype="observation">
+			<state id="S_0" label="N16_0" />
+			<state id="S_1" label="N16_1" />
+			<state id="S_2" label="N16_2" />
+			<state id="S_3" label="N16_3" />
+			<state id="S_4" label="N16_4" />
+			<state id="S_5" label="N16_5" />
+			<parents>N6</parents>
+			<probabilities>0 0.5474 0.2526 0.2 0 0 0.1984 0.4741 0.1724 0.1379 0.0086 0.0086</probabilities>
+		</cpt>
+		<cpt id="N17" diagtype="observation">
+			<state id="S_0_16" label="N17_0_16" />
+			<state id="S_17_59" label="N17_17_59" />
+			<state id="S_59_inf" label="N17_59_inf" />
+			<parents>N6</parents>
+			<probabilities>0 0.3133 0.6867 0.1803 0.07679999999999999 0.7429</probabilities>
+		</cpt>
+		<cpt id="N55" diagtype="observation">
+			<state id="S_0_15" label="N55_0_15" />
+			<state id="S_16_inf" label="N55_16_inf" />
+			<parents>N6</parents>
+			<probabilities>0.552 0.448 0.1014 0.8986</probabilities>
+		</cpt>
+		<cpt id="N79" diagtype="observation">
+			<state id="S_0_9" label="N79_0_9" />
+			<state id="S_10_inf" label="N79_10_inf" />
+			<parents>N6</parents>
+			<probabilities>0.5395 0.4605 0.0559 0.9441000000000001</probabilities>
+		</cpt>
+		<cpt id="N12" diagtype="observation">
+			<state id="S_0_3_55" label="N12_0_3_55" />
+			<state id="S_3_56_inf" label="N12_3_56_inf" />
+			<parents>N6</parents>
+			<probabilities>0.4301 0.5699 0.1755 0.8245</probabilities>
+		</cpt>
+		<cpt id="N86" diagtype="observation">
+			<state id="S_0_51" label="N86_0_51" />
+			<state id="S_52_inf" label="N86_52_inf" />
+			<parents>N6</parents>
+			<probabilities>0.3419 0.6581 0.7964 0.2036</probabilities>
+		</cpt>
+		<cpt id="N7" diagtype="observation">
+			<state id="S_absence" label="N7_absence" />
+			<state id="S_presence" label="N7_presence" />
+			<parents>N6</parents>
+			<probabilities>0.8228 0.1772 0.5794 0.4206</probabilities>
+		</cpt>
+		<decision id="Dementia">
+			<state id="Negative" label="DNeg" />
+			<state id="Positive" label="DPos" />
+		</decision>
+		<utility id="Utility">
+			<parents>N6 Dementia</parents>
+			<utilities>1 -1 -1 1</utilities>
+		</utility>
+	</nodes>
+	<extensions>
+		<genie version="1.0" app="GeNIe 3.0.6518.0 ACADEMIC" name="Sub0">
+			<node id="N2">
+				<name>Age</name>
+				<interior color="ffff99" />
+				<outline color="0000bb" />
+				<font color="000000" name="Arial" size="8" />
+				<position>156 68 258 122</position>
+				<barchart active="true" width="128" height="64" />
+			</node>
+			<node id="N3">
+				<name>Gender</name>
+				<interior color="ffff99" />
+				<outline color="0000bb" />
+				<font color="000000" name="Arial" size="8" />
+				<position>310 68 412 122</position>
+				<barchart active="true" width="128" height="64" />
+			</node>
+			<node id="N4">
+				<name>Education</name>
+				<interior color="ffff99" />
+				<outline color="0000bb" />
+				<font color="000000" name="Arial" size="8" />
+				<position>464 68 566 122</position>
+				<barchart active="true" width="128" height="64" />
+			</node>
+			<node id="N6">
+				<name>Diagnosis</name>
+				<interior color="ffff99" />
+				<outline color="0000bb" />
+				<font color="000000" name="Arial" size="8" />
+				<position>300 193 402 247</position>
+				<barchart active="true" width="128" height="64" />
+			</node>
+			<node id="N14">
+				<name>Mini mental state score</name>
+				<interior color="ffff99" />
+				<outline color="0000bb" />
+				<font color="000000" name="Arial" size="8" />
+				<position>23 343 125 397</position>
+				<barchart active="true" width="128" height="86" />
+			</node>
+			<node id="N8">
+				<name>Clinical dementia rating scale</name>
+				<interior color="ffff99" />
+				<outline color="0000bb" />
+				<font color="000000" name="Arial" size="8" />
+				<position>204 342 306 396</position>
+				<barchart active="true" width="194" height="123" />
+			</node>
+			<node id="N15">
+				<name>Verbal fluency test score</name>
+				<interior color="ffff99" />
+				<outline color="0000bb" />
+				<font color="000000" name="Arial" size="8" />
+				<position>386 340 488 394</position>
+				<barchart active="true" width="128" height="91" />
+			</node>
+			<node id="N11">
+				<name>Pfeffer questionnaire score</name>
+				<interior color="ffff99" />
+				<outline color="0000bb" />
+				<font color="000000" name="Arial" size="8" />
+				<position>535 339 637 393</position>
+				<barchart active="true" width="128" height="93" />
+			</node>
+			<node id="N16">
+				<name>Clock drawing test scale</name>
+				<interior color="ffff99" />
+				<outline color="0000bb" />
+				<font color="000000" name="Arial" size="8" />
+				<position>689 339 791 393</position>
+				<barchart active="true" width="128" height="147" />
+			</node>
+			<node id="N17">
+				<name>Trial making test</name>
+				<interior color="ffff99" />
+				<outline color="0000bb" />
+				<font color="000000" name="Arial" size="8" />
+				<position>157 480 259 534</position>
+				<barchart active="true" width="128" height="79" />
+			</node>
+			<node id="N55">
+				<name>Stroop color word test</name>
+				<interior color="ffff99" />
+				<outline color="0000bb" />
+				<font color="000000" name="Arial" size="8" />
+				<position>311 477 413 531</position>
+				<barchart active="true" width="128" height="72" />
+			</node>
+			<node id="N79">
+				<name>Lawton scale</name>
+				<interior color="ffff99" />
+				<outline color="0000bb" />
+				<font color="000000" name="Arial" size="8" />
+				<position>465 481 567 535</position>
+				<barchart active="true" width="128" height="64" />
+			</node>
+			<node id="N12">
+				<name>IQCode score</name>
+				<interior color="ffff99" />
+				<outline color="0000bb" />
+				<font color="000000" name="Arial" size="8" />
+				<position>184 599 286 653</position>
+				<barchart active="true" width="128" height="64" />
+			</node>
+			<node id="N86">
+				<name>Berg balance scale</name>
+				<interior color="ffff99" />
+				<outline color="0000bb" />
+				<font color="000000" name="Arial" size="8" />
+				<position>338 599 440 653</position>
+				<barchart active="true" width="128" height="64" />
+			</node>
+			<node id="N7">
+				<name>Depression</name>
+				<interior color="ffff99" />
+				<outline color="0000bb" />
+				<font color="000000" name="Arial" size="8" />
+				<position>492 599 594 653</position>
+				<barchart active="true" width="128" height="64" />
+			</node>
+			<node id="Utility">
+				<name>Utility</name>
+				<interior color="ff99cc" />
+				<outline color="000080" />
+				<font color="000000" name="Arial" size="8" />
+				<position>635 205 680 237</position>
+			</node>
+			<node id="Dementia">
+				<name>Dementia?</name>
+				<interior color="ccffcc" />
+				<outline color="000080" />
+				<font color="000000" name="Arial" size="8" />
+				<position>616 70 704 118</position>
+			</node>
+		</genie>
+	</extensions>
+</smile>

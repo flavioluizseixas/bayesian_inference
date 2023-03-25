@@ -1,0 +1,246 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- This network was created in GeNIe Academic, which can be used for academic teaching and research purposes only -->
+<smile version="1.0" id="Unnamed" numsamples="1000" discsamples="10000">
+	<nodes>
+		<cpt id="gender">
+			<state id="S_female" />
+			<state id="S_male" />
+			<probabilities>0.7958626289905276 0.2041373710094724</probabilities>
+		</cpt>
+		<cpt id="education">
+			<state id="S_0_15" />
+			<state id="S_16_inf" />
+			<probabilities>0.8263085992887134 0.1736914007112866</probabilities>
+		</cpt>
+		<cpt id="Diagnosis">
+			<state id="S_negative" />
+			<state id="S_positive" />
+			<parents>gender education</parents>
+			<probabilities>0.5263536042730332 0.4736463957269668 0.9511057251608904 0.04889427483910953 0.06477240903975241 0.9352275909602475 0.837918568755908 0.162081431244092</probabilities>
+		</cpt>
+		<cpt id="MMSE">
+			<state id="S_0_28" />
+			<state id="S_29_30" />
+			<parents>Diagnosis</parents>
+			<probabilities>0.3571428571428572 0.6428571428571428 0.9848484848484849 0.01515151515151515</probabilities>
+		</cpt>
+		<cpt id="CDR">
+			<state id="S_0_normal" />
+			<state id="S_0_5_very_mild" />
+			<state id="S_1_mild" />
+			<state id="S_2_moderate" />
+			<state id="S_3_severe" />
+			<parents>Diagnosis</parents>
+			<probabilities>0.7465684033775871 0.08002156999028574 0.1466762533290159 0.01336688665155559 0.01336688665155559 0.06875000000000001 0.44375 0.4125 0.0375 0.0375</probabilities>
+		</cpt>
+		<cpt id="VFT">
+			<state id="S_0_15" />
+			<state id="S_16_inf" />
+			<parents>Diagnosis</parents>
+			<probabilities>0.338235294117647 0.6617647058823529 0.890625 0.109375</probabilities>
+		</cpt>
+		<cpt id="pfeffer">
+			<state id="S_0_1" />
+			<state id="S_2_inf" />
+			<parents>Diagnosis</parents>
+			<probabilities>0.8863635306320365 0.1136364693679635 0.2166666666666667 0.7833333333333333</probabilities>
+		</cpt>
+		<cpt id="CDT">
+			<state id="S_0" />
+			<state id="S_1" />
+			<state id="S_2" />
+			<state id="S_3" />
+			<state id="S_4" />
+			<state id="S_5" />
+			<parents>Diagnosis</parents>
+			<probabilities>0.005376344086024597 0.1344086021505383 0.2634408602150519 0.5860215053763361 0.005376344086024597 0.005376344086024597 0.005208333333333333 0.5052083333333334 0.2864583333333333 0.1927083333333334 0.005208333333333333 0.005208333333333333</probabilities>
+		</cpt>
+		<cpt id="TMT">
+			<state id="S_0_36" />
+			<state id="S_37_inf" />
+			<parents>Diagnosis</parents>
+			<probabilities>0.421875 0.578125 0.01923076923884683 0.9807692307611531</probabilities>
+		</cpt>
+		<cpt id="stroop">
+			<state id="S_0_17" />
+			<state id="S_18_inf" />
+			<parents>Diagnosis</parents>
+			<probabilities>0.8409089976165028 0.1590910023834972 0.1369172504873991 0.8630827495126009</probabilities>
+		</cpt>
+		<cpt id="lawton">
+			<state id="S_0_24" />
+			<state id="S_25_inf" />
+			<parents>Diagnosis</parents>
+			<probabilities>0.04678431825539377 0.9532156817446061 0.7306927706809728 0.2693072293190272</probabilities>
+		</cpt>
+		<cpt id="iqcode">
+			<state id="S_0_3_3" />
+			<state id="S_3_3_inf" />
+			<parents>Diagnosis</parents>
+			<probabilities>0.9576355488648408 0.04236445113515927 0.4473684790050989 0.5526315209949011</probabilities>
+		</cpt>
+		<cpt id="berg">
+			<state id="S_0_54" />
+			<state id="S_55_55" />
+			<state id="S_56_inf" />
+			<parents>Diagnosis</parents>
+			<probabilities>0.03118954550359586 0.2124758182014383 0.7563346362949659 0.7947188746952787 0.1795381528793515 0.02574297242536971</probabilities>
+		</cpt>
+		<cpt id="depression">
+			<state id="S_absence" />
+			<state id="S_presence" />
+			<parents>Diagnosis</parents>
+			<probabilities>0.4231361967733687 0.5768638032266314 0.6166666666666667 0.3833333333333333</probabilities>
+		</cpt>
+		<decision id="Dementia">
+			<state id="Choice0" />
+			<state id="Choice1" />
+		</decision>
+		<decision id="MCI">
+			<state id="Choice0" />
+			<state id="Choice1" />
+			<parents>Dementia</parents>
+		</decision>
+		<utility id="Utility">
+			<parents>Diagnosis MCI</parents>
+			<utilities>1 -1 -1 1</utilities>
+		</utility>
+	</nodes>
+	<extensions>
+		<genie version="1.0" app="GeNIe 3.0.6518.0 ACADEMIC" name="Unnamed">
+			<node id="Diagnosis">
+				<name>Diagnosis</name>
+				<interior color="ffff99" />
+				<outline color="0000bb" />
+				<font color="000000" name="Arial" size="8" />
+				<position>272 157 348 193</position>
+				<barchart active="true" width="128" height="64" />
+			</node>
+			<node id="gender">
+				<name>gender</name>
+				<interior color="ffff99" />
+				<outline color="0000bb" />
+				<font color="000000" name="Arial" size="8" />
+				<position>144 60 220 96</position>
+				<barchart active="true" width="128" height="64" />
+			</node>
+			<node id="education">
+				<name>education</name>
+				<interior color="ffff99" />
+				<outline color="0000bb" />
+				<font color="000000" name="Arial" size="8" />
+				<position>389 58 465 94</position>
+				<barchart active="true" width="128" height="64" />
+			</node>
+			<node id="MMSE">
+				<name>MMSE</name>
+				<interior color="ffff99" />
+				<outline color="0000bb" />
+				<font color="000000" name="Arial" size="8" />
+				<position>48 283 124 319</position>
+				<barchart active="true" width="128" height="64" />
+			</node>
+			<node id="CDR">
+				<name>CDR</name>
+				<interior color="ffff99" />
+				<outline color="0000bb" />
+				<font color="000000" name="Arial" size="8" />
+				<position>208 316 284 352</position>
+				<barchart active="true" width="128" height="108" />
+			</node>
+			<node id="VFT">
+				<name>VFT</name>
+				<interior color="ffff99" />
+				<outline color="0000bb" />
+				<font color="000000" name="Arial" size="8" />
+				<position>60 444 136 480</position>
+				<barchart active="true" width="128" height="64" />
+			</node>
+			<node id="pfeffer">
+				<name>pfeffer</name>
+				<interior color="ffff99" />
+				<outline color="0000bb" />
+				<font color="000000" name="Arial" size="8" />
+				<position>370 290 446 326</position>
+				<barchart active="true" width="128" height="64" />
+			</node>
+			<node id="CDT">
+				<name>CDT</name>
+				<interior color="ffff99" />
+				<outline color="0000bb" />
+				<font color="000000" name="Arial" size="8" />
+				<position>264 494 340 530</position>
+				<barchart active="true" width="128" height="126" />
+			</node>
+			<node id="TMT">
+				<name>TMT</name>
+				<interior color="ffff99" />
+				<outline color="0000bb" />
+				<font color="000000" name="Arial" size="8" />
+				<position>527 282 603 318</position>
+				<barchart active="true" width="128" height="64" />
+			</node>
+			<node id="stroop">
+				<name>stroop</name>
+				<interior color="ffff99" />
+				<outline color="0000bb" />
+				<font color="000000" name="Arial" size="8" />
+				<position>419 491 495 527</position>
+				<barchart active="true" width="128" height="64" />
+			</node>
+			<node id="lawton">
+				<name>lawton</name>
+				<interior color="ffff99" />
+				<outline color="0000bb" />
+				<font color="000000" name="Arial" size="8" />
+				<position>577 492 653 528</position>
+				<barchart active="true" width="128" height="64" />
+			</node>
+			<node id="iqcode">
+				<name>iqcode</name>
+				<interior color="ffff99" />
+				<outline color="0000bb" />
+				<font color="000000" name="Arial" size="8" />
+				<position>414 386 490 422</position>
+				<barchart active="true" width="128" height="64" />
+			</node>
+			<node id="berg">
+				<name>berg</name>
+				<interior color="ffff99" />
+				<outline color="0000bb" />
+				<font color="000000" name="Arial" size="8" />
+				<position>586 390 662 426</position>
+				<barchart active="true" width="128" height="72" />
+			</node>
+			<node id="depression">
+				<name>depression</name>
+				<interior color="ffff99" />
+				<outline color="0000bb" />
+				<font color="000000" name="Arial" size="8" />
+				<position>687 276 763 312</position>
+				<barchart active="true" width="128" height="64" />
+			</node>
+			<node id="Utility">
+				<name>Utility</name>
+				<interior color="ff99cc" />
+				<outline color="000080" />
+				<font color="000000" name="Arial" size="8" />
+				<position>573 156 624 188</position>
+			</node>
+			<node id="MCI">
+				<name>MCI</name>
+				<interior color="ccffcc" />
+				<outline color="000080" />
+				<font color="000000" name="Arial" size="8" />
+				<position>559 54 635 97</position>
+			</node>
+			<node id="Dementia">
+				<name>Dementia?</name>
+				<interior color="ccffcc" />
+				<outline color="000080" />
+				<font color="000000" name="Arial" size="8" />
+				<position>669 58 745 101</position>
+			</node>
+		</genie>
+	</extensions>
+</smile>
