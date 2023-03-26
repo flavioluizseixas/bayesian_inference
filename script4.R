@@ -11,8 +11,8 @@ nodes <- nodes(dag)
 # Obtenha os nomes dos nós
 n1 <- c("N2", "N3", "N4")
 n2 <- c("N14","N8","N15","N11","N16","N17","N55","N79","N12","N86","N7" )
+n_id <- c(n1, n2)
 
-n <- c(n1, n2)
 n_name <- c("Age", "Gender", "Education")
 n_name <- c(n_name, "Mini mental state score", "Clinical dementia rating scale", "Verbal fluency test score",
             "Pfeffer questionnaire score", "Clock drawing test scale", "Trial making test",
@@ -35,7 +35,7 @@ for (i in seq_along(states)) {
   }
 }
 
-n <- 1
+n <- 4
 comb <- combn(nrow(df), n)
 combs <- data.frame()
 
@@ -71,15 +71,37 @@ for (i in seq_len(nrow(combs))) {
   r <- querygrain(e, nodes = c("N6"),
                     type = "marginal")
 
-  p <- c(r$N6[1], r$N6[2])
-  h <- -sum(p * log2(p))
-  if (r$N6[1] == 0 || r$N6[2] == 0) {
-    h = 0
+  if (is.nan(r$N6[1]) || is.nan(r$N6[2])) {
+    p_pos <- -1
+    h <- 0
+  }
+  else {
+    p <- c(r$N6[1], r$N6[2])
+    h <- -sum(p * log2(p))
+    if (r$N6[1] == 0 || r$N6[2] == 0) {
+      h = 0
+    }
+    p_pos <- r$N6[2]
   }
 
-  resp <- rbind(resp, data.frame(p_pos = r$N6[2], entropy = h))
+  resp <- rbind(resp, data.frame(p_pos = p_pos, entropy = h, row.names = nrow(resp)+1))
 
 }
 
+# substitui o identificador pelo nome do nodo
+for (j in seq(1,n*2,2)) {
+  for (i in 1:length(n_id)) {
+    combs[which(combs[[j]] == n_id[i]), j] <- n_name[i]
+  }
+}
+
+# retira o "S_" do estado
+for (j in seq(2,n*2,2)) {
+  combs[, j] <- sapply(combs[, j], function(x) substring(x, 3))
+}
 combs = cbind(combs, resp)
-write.xlsx(combs, "Data/resultados-comb-1.xlsx", sheetName = "Resultados")
+
+filename <- paste0("Data/resultados-comb-", n, ".xlsx")
+sheetname <- paste0("Combinação de ", n)
+write.xlsx(combs, filename, sheetName = sheetname)
+
